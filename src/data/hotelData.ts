@@ -29,7 +29,7 @@ export const HOTEL_INFO = {
   state: "Johor Darul Ta'zim",
   country: "Malaysia",
   googleMapsUrl: "https://maps.google.com/?q=Wisma+HYH+Jalan+Trus+Johor+Bahru",
-  heroImage: heroFacadeImg,
+  heroImage: "https://res.cloudinary.com/k7og2ybq/image/upload/v1790334175/unnamed_2.jpg",
   aboutImage: aboutLobbyImg,
   receptionImage: facilityReceptionDeskImg,
   loungeImage: facilityLoungeCafeImg,
