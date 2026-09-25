@@ -1,0 +1,6 @@
+{
+  "name": "Miilehill Hotel by Maco",
+  "description": "Official website for Miilehill Hotel by Maco at JB Town Center, Johor Bahru. Luxurious boutique stay at Wisma HYH, Jalan Trus.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
