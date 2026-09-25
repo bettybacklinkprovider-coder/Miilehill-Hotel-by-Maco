@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Phone, ArrowRight, MapPin, CheckCircle, Wifi, Clock, Sparkles, ShieldCheck, Coffee, Navigation, ChevronRight, Star } from 'lucide-react';
+import { Calendar, Phone, ArrowRight, MapPin, CheckCircle, Wifi, Clock, Sparkles, ShieldCheck, Coffee, Navigation, ChevronRight, Star, Briefcase } from 'lucide-react';
 import { HOTEL_INFO, ROOMS_DATA, FACILITIES_DATA, WHY_STAY_REASONS } from '../data/hotelData';
 import { PageRoute, Room } from '../types/hotel';
 
@@ -244,35 +244,50 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate, onOpenBooking, o
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {FACILITIES_DATA.map((fac) => {
               return (
                 <div
                   key={fac.id}
-                  className="p-6 bg-[#F2ECE1]/50 rounded-2xl border border-[#A07855]/20 hover:border-[#8C6239]/50 transition-all space-y-4"
+                  className="bg-[#F2ECE1]/50 rounded-2xl overflow-hidden border border-[#A07855]/20 hover:border-[#8C6239]/50 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group"
                 >
-                  <div className="w-12 h-12 rounded-xl bg-[#2C1D11] text-[#D4AF37] flex items-center justify-center shrink-0 shadow-md">
-                    {fac.iconName === 'Clock' && <Clock className="w-6 h-6" />}
-                    {fac.iconName === 'Coffee' && <Coffee className="w-6 h-6" />}
-                    {fac.iconName === 'Wifi' && <Wifi className="w-6 h-6" />}
-                    {fac.iconName === 'Sparkles' && <Sparkles className="w-6 h-6" />}
-                    {fac.iconName === 'ShieldCheck' && <ShieldCheck className="w-6 h-6" />}
-                    {fac.iconName !== 'Clock' && fac.iconName !== 'Coffee' && fac.iconName !== 'Wifi' && fac.iconName !== 'Sparkles' && fac.iconName !== 'ShieldCheck' && <CheckCircle className="w-6 h-6" />}
-                  </div>
+                  {/* Photo Banner Header */}
+                  {fac.image && (
+                    <div className="relative h-48 overflow-hidden bg-[#2C1D11]">
+                      <img
+                        src={fac.image}
+                        alt={fac.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                      <div className="absolute top-3 left-3 w-10 h-10 rounded-xl bg-[#2C1D11]/90 backdrop-blur-md text-[#D4AF37] flex items-center justify-center shrink-0 border border-[#D4AF37]/30 shadow-md">
+                        {fac.iconName === 'Clock' && <Clock className="w-5 h-5" />}
+                        {fac.iconName === 'Coffee' && <Coffee className="w-5 h-5" />}
+                        {fac.iconName === 'Wifi' && <Wifi className="w-5 h-5" />}
+                        {fac.iconName === 'Sparkles' && <Sparkles className="w-5 h-5" />}
+                        {fac.iconName === 'ShieldCheck' && <ShieldCheck className="w-5 h-5" />}
+                        {fac.iconName === 'Briefcase' && <Briefcase className="w-5 h-5" />}
+                        {fac.iconName !== 'Clock' && fac.iconName !== 'Coffee' && fac.iconName !== 'Wifi' && fac.iconName !== 'Sparkles' && fac.iconName !== 'ShieldCheck' && fac.iconName !== 'Briefcase' && <CheckCircle className="w-5 h-5" />}
+                      </div>
+                    </div>
+                  )}
 
-                  <div className="space-y-1.5">
-                    <h3 className="text-lg font-serif font-bold text-[#2C1D11]">{fac.title}</h3>
-                    <p className="text-xs text-[#3D271D]/80 leading-relaxed">{fac.description}</p>
-                  </div>
+                  <div className="p-6 space-y-4 flex-1 flex flex-col justify-between">
+                    <div className="space-y-2">
+                      <h3 className="text-lg font-serif font-bold text-[#2C1D11] group-hover:text-[#8C6239] transition-colors">{fac.title}</h3>
+                      <p className="text-xs text-[#3D271D]/80 leading-relaxed">{fac.description}</p>
+                    </div>
 
-                  <ul className="space-y-1 pt-1">
-                    {fac.highlights.slice(0, 2).map((h, i) => (
-                      <li key={i} className="text-[11px] text-[#8C6239] font-medium flex items-center gap-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#8C6239]"></span>
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="space-y-1.5 pt-2 border-t border-[#A07855]/15">
+                      {fac.highlights.slice(0, 2).map((h, i) => (
+                        <li key={i} className="text-[11px] text-[#8C6239] font-medium flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-[#8C6239]"></span>
+                          {h}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               );
             })}

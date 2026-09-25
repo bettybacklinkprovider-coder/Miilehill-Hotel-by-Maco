@@ -6,6 +6,10 @@ import roomDeluxeKingImg from '../assets/images/room_deluxe_king_1790332694602.j
 import roomExecutiveSuiteImg from '../assets/images/room_executive_suite_1790332708258.jpg';
 import facilityLoungeCafeImg from '../assets/images/facility_lounge_cafe_1790332724337.jpg';
 import facilityReceptionDeskImg from '../assets/images/facility_reception_desk_1790332738957.jpg';
+import facilityWifiImg from '../assets/images/facility_wifi_lounge_1790334145059.jpg';
+import facilityHousekeepingImg from '../assets/images/facility_housekeeping_clean_1790334163148.jpg';
+import facilityElevatorImg from '../assets/images/facility_elevator_access_1790334180714.jpg';
+import facilityBusinessImg from '../assets/images/facility_business_corner_1790334196315.jpg';
 
 import whyStayLocationImg from '../assets/images/why_stay_location_1790333139360.jpg';
 import whyStayBoutiqueImg from '../assets/images/why_stay_boutique_1790333159561.jpg';
@@ -170,7 +174,7 @@ export const FACILITIES_DATA: Facility[] = [
     title: 'High-Speed Enterprise Wi-Fi',
     description: 'Seamless, high-speed fiber internet coverage throughout all guest rooms, suites, lobby, and common areas.',
     iconName: 'Wifi',
-    image: heroFacadeImg,
+    image: facilityWifiImg,
     highlights: ['100 Mbps Direct Speed', 'Unlimited Devices Supported', 'Secure Guest Network', 'In-Room Ethernet Port']
   },
   {
@@ -178,7 +182,7 @@ export const FACILITIES_DATA: Facility[] = [
     title: 'Daily Housekeeping & Hygiene',
     description: 'Rigorous cleanliness standards with daily room refreshing, fresh crisp bed linens, sanitised surfaces, and plush bath towels.',
     iconName: 'Sparkles',
-    image: aboutLobbyImg,
+    image: facilityHousekeepingImg,
     highlights: ['Daily Linen Replacement', 'Sterilised Bathrooms', 'Environmentally Friendly Wash', 'Prompt Turndown Requests']
   },
   {
@@ -186,7 +190,7 @@ export const FACILITIES_DATA: Facility[] = [
     title: 'Prime Location & Elevator Access',
     description: 'Located at Level 3 of Wisma HYH on Jalan Trus, with dedicated elevator access, electronic security cards, and covered entrance.',
     iconName: 'ShieldCheck',
-    image: heroFacadeImg,
+    image: facilityElevatorImg,
     highlights: ['Keycard Floor Access', 'Covered Drop-off Point', 'CCTV Security Monitoring', 'Walking Distance to JB City Square']
   },
   {
@@ -194,7 +198,7 @@ export const FACILITIES_DATA: Facility[] = [
     title: 'Guest Business Corner',
     description: 'Equipped with printing, scanning, and power stations for mobile professionals and corporate guests staying in Johor Bahru.',
     iconName: 'Briefcase',
-    image: facilityReceptionDeskImg,
+    image: facilityBusinessImg,
     highlights: ['Document Printing & Scan', 'High-Speed Work Desks', 'Charging Hub Station', 'Quiet Atmosphere']
   }
 ];
